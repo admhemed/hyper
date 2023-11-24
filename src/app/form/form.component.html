@@ -1,0 +1,36 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <label for="name">Name:</label>
+  <input formControlName="name" id="name" type="text" required />
+  <div
+    *ngIf="form.get('name')!.errors?.['required'] && form.get('name')!.touched"
+    class="error-message"
+  >
+    Name is required.
+  </div>
+
+  <label for="email">Email:</label>
+  <input formControlName="email" id="email" type="email" required />
+  <div
+    *ngIf="form.get('email')!.errors?.['required'] && form.get('email')!.touched"
+    class="error-message"
+  >
+    Email is required.
+  </div>
+
+  <div
+    *ngIf="form.get('email')!.errors?.['email'] && form.get('email')!.touched"
+    class="error-message"
+  >
+    Enter a valid email.
+  </div>
+
+  <div class="button-container">
+    <button type="submit" [disabled]="!isFormValid">Submit</button>
+    <button type="button" (click)="onReset()" [disabled]="isFormPristine">
+      Reset
+    </button>
+  </div>
+  <div class="big-element">
+    This element is just to make the form height bigger so demonstrate scrolls
+  </div>
+</form>

@@ -1,0 +1,39 @@
+:host {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  height: 100vh;
+  overflow: hidden;
+
+  ::ng-deep app-header {
+    grid-area: header;
+  }
+
+  .main-container {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    overflow: hidden;
+
+    .body-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 10px;
+      overflow: auto;
+      padding: 30px;
+      background-color: pink;
+      .menu,
+      .content {
+        display: grid;
+        place-items: center; // Center content horizontally and vertically
+      }
+    }
+  }
+
+  ::ng-deep app-footer {
+    grid-area: footer;
+  }
+}

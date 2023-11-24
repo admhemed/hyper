@@ -1,0 +1,22 @@
+header {
+  height: 10vh;
+}
+.menu-toggle {
+  display: none; // Hide the toggle icon by default
+}
+/* Only show the toggle icon on mobile devices */
+@media (max-width: 600px) {
+  .menu-toggle {
+    display: block; /* This makes the toggle icon visible on mobile */
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    .icon {
+      font-size: 24px;
+    }
+  }
+}

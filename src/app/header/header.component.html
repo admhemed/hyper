@@ -1,0 +1,9 @@
+<header
+  class="header-content"
+  [ngStyle]="{ 'background-color': (themeColor$ | async) }"
+>
+  {{ themeColor$ | async }}
+  <button class="menu-toggle" (click)="toggleMenu()">
+    <i class="icon">&#9776;</i>
+  </button>
+</header>

@@ -1,0 +1,49 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  .main-container {
+    background-color: #e6e6e6;
+    display: flex;
+    overflow: hidden; // Prevents global scroll
+  }
+  .body-container {
+    display: flex;
+    flex: 1; // Allows this container to grow and fill the space between header and footer
+    background-color: pink;
+    padding: 15px;
+    justify-content: safe center;
+    align-items: safe center;
+    overflow: auto;
+  }
+  .menu {
+    flex-basis: 200px; // Adjust width as needed
+    background-color: #eee;
+    overflow-y: auto;
+  }
+
+  .content {
+    padding: 20px;
+    width: 50%;
+  }
+}
+
+/* Initial state for the menu is shown */
+.menu.visibleMenu {
+  display: block;
+}
+h1 {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+}
+
+@media (max-width: 600px) {
+  .menu.visibleMenu {
+    display: block;
+    position: absolute;
+  }
+
+  .menu {
+    display: none;
+  }
+}
